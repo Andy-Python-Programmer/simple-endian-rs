@@ -120,7 +120,7 @@ impl<T> BigEndian<T> where T: SpecificEndian<T> {
         Self{_v: v}
     }
     /// Converts the data to the same type T in host-native endian.
-    pub fn to_native(&self) -> T {
+    pub fn to_native(self) -> T {
         T::from_big_endian(&self._v)
     }
 }
